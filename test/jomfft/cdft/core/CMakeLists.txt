@@ -1,0 +1,37 @@
+cmake_minimum_required(VERSION 3.21)
+
+add_subdirectory(impl)
+
+target_sources(${TEST} PRIVATE
+BatchMultiplyFunctionTest.c
+BatchMultiplyTest.c
+InnerBatchDftFunctionTest.c
+InnerBatchDftTest.c
+PairSquareTwiddleDftFunctionTest.c
+PairSquareTwiddleDftTest.c
+RegisterTest.c
+SquareSplitTwiddleDftFunctionTest.c
+SquareSplitTwiddleDftTest.c
+StrideBatchDftFunctionTest.c
+StrideBatchDftTest.c
+TransposeDftTwiddleFunctionTest.c
+TransposeDftTwiddleTest.c
+TwiddleDftFunctionTest.c
+TwiddleDftTest.c
+BatchMultiplyFunctionTest.h
+BatchMultiplyTest.h
+InnerBatchDftFunctionTest.h
+InnerBatchDftTest.h
+PairSquareTwiddleDftFunctionTest.h
+PairSquareTwiddleDftTest.h
+RegisterTest.h
+SquareSplitTwiddleDftFunctionTest.h
+SquareSplitTwiddleDftTest.h
+StrideBatchDftFunctionTest.h
+StrideBatchDftTest.h
+TransposeDftTwiddleFunctionTest.h
+TransposeDftTwiddleTest.h
+TwiddleDftBackwardTest.h
+TwiddleDftFunctionTest.h
+TwiddleDftTest.h
+)

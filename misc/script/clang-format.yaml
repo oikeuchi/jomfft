@@ -1,0 +1,5 @@
+BasedOnStyle: LLVM
+
+AttributeMacros: [JOMFFT_API, FORCEINLINE]
+  
+TypenameMacros: [NS, NS_, FUNCTION_, FUNCTIONW_, LIST_, VALUE_TYPE_, TENSOR_]

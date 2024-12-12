@@ -1,0 +1,27 @@
+#ifndef RDFT_2_LOAD
+#define RDFT_2_LOAD RDFT_LOAD
+#endif
+
+#ifndef RDFT_2_STORE_RI_0
+#define RDFT_2_STORE_RI_0 RDFT_STORE_RI_0
+#endif
+
+#ifndef RDFT_2_INPUT_INDEX
+#define RDFT_2_INPUT_INDEX(i) (i)
+#endif
+
+#ifndef RDFT_2_OUTPUT_INDEX
+#define RDFT_2_OUTPUT_INDEX(i) (i)
+#endif
+
+{
+  RV_VECTOR z0 = RDFT_2_LOAD(RDFT_2_INPUT_INDEX(0));
+  RV_VECTOR z1 = RDFT_2_LOAD(RDFT_2_INPUT_INDEX(1));
+  RV_DFT2(&z0, &z1);
+  RDFT_2_STORE_RI_0(2, z0, z1);
+}
+
+#undef RDFT_2_LOAD
+#undef RDFT_2_STORE_RI_0
+#undef RDFT_2_INPUT_INDEX
+#undef RDFT_2_OUTPUT_INDEX

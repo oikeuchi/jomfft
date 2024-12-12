@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.21)
+
+add_subdirectory(impl)
+
+target_sources(${TEST} PRIVATE
+ComplexToPairDftFunctionTest.c
+ComplexToPairDftTest.c
+EvenSizeStrideBatchDftTest.c
+EvenSizeTwiddleDftFunctionTest.c
+EvenSizeTwiddleDftTest.c
+RegisterTest.c
+StrideBatchDftFunctionTest.c
+StrideBatchDftTest.c
+ComplexToPairDftFunctionTest.h
+ComplexToPairDftTest.h
+EvenSizeStrideBatchDftTest.h
+EvenSizeTwiddleDftFunctionTest.h
+EvenSizeTwiddleDftTest.h
+RegisterTest.h
+StrideBatchDftFunctionTest.h
+StrideBatchDftTest.h
+)

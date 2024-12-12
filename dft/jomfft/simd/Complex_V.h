@@ -1,0 +1,41 @@
+#include "Simd.h"
+
+#ifdef SIMD_AVX
+#include "x64/Complex_V.h"
+#elif defined(SIMD_NEON)
+#include "arm/Complex_V.h"
+#else
+#include "Complex_1.h"
+#endif
+
+#if USE_COMPLEX_CONJ
+#define CV_N_MUL_RI CV_MUL_RI_CONJ
+#define CV_C_MUL_RI CV_MUL_RI
+#define CV_N_MUL CV_MUL_CONJ
+#define CV_C_MUL CV_MUL
+#define CV_N_MUL_SCALAR CV_MUL_SCALAR_CONJ
+#define CV_C_MUL_SCALAR CV_MUL_SCALAR
+#define CV_N_MULI_ADD CV_MULI_ADD_CONJ
+#define CV_C_MULI_ADD CV_MULI_ADD
+#define CV_N_MULI_SUB CV_MULI_SUB_CONJ
+#define CV_C_MULI_SUB CV_MULI_SUB
+#define CV_N_MULW8 CV_MULW8_CONJ
+#define CV_C_MULW8 CV_MULW8
+#define CV_N_MULI_DFT2 CV_MULI_DFT2_CONJ
+#define CV_C_MULI_DFT2 CV_MULI_DFT2
+#else
+#define CV_N_MUL_RI CV_MUL_RI
+#define CV_C_MUL_RI CV_MUL_RI_CONJ
+#define CV_N_MUL CV_MUL
+#define CV_C_MUL CV_MUL_CONJ
+#define CV_N_MUL_SCALAR CV_MUL_SCALAR
+#define CV_C_MUL_SCALAR CV_MUL_SCALAR_CONJ
+#define CV_N_MULI_ADD CV_MULI_ADD
+#define CV_C_MULI_ADD CV_MULI_ADD_CONJ
+#define CV_N_MULI_SUB CV_MULI_SUB
+#define CV_C_MULI_SUB CV_MULI_SUB_CONJ
+#define CV_N_MULW8 CV_MULW8
+#define CV_C_MULW8 CV_MULW8_CONJ
+#define CV_N_MULI_DFT2 CV_MULI_DFT2
+#define CV_C_MULI_DFT2 CV_MULI_DFT2_CONJ
+#endif

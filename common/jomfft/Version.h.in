@@ -1,0 +1,5 @@
+#pragma once
+
+#define JOMFFT_VERSION_MAJOR @jomfft_VERSION_MAJOR@
+#define JOMFFT_VERSION_MINOR @jomfft_VERSION_MINOR@
+#define JOMFFT_VERSION_PATCH @jomfft_VERSION_PATCH@

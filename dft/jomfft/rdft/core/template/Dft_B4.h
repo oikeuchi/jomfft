@@ -1,0 +1,41 @@
+#ifndef RDFT_4_LOAD_RI_0
+#define RDFT_4_LOAD_RI_0 RDFT_LOAD_RI_0
+#endif
+
+#ifndef RDFT_4_LOAD_RI
+#define RDFT_4_LOAD_RI RDFT_LOAD_RI
+#endif
+
+#ifndef RDFT_4_STORE
+#define RDFT_4_STORE RDFT_STORE
+#endif
+
+#ifndef RDFT_4_INPUT_INDEX
+#define RDFT_4_INPUT_INDEX(i) (i)
+#endif
+
+#ifndef RDFT_4_OUTPUT_INDEX
+#define RDFT_4_OUTPUT_INDEX(i) (i)
+#endif
+
+{
+  RV_VECTOR z0, z1;
+  RDFT_4_LOAD_RI_0(4, &z0, &z1);
+  RV_DFT2(&z0, &z1);
+  RV_VECTOR z2, z3;
+  RDFT_4_LOAD_RI(RDFT_4_INPUT_INDEX(1), &z2, &z3);
+  z2 = RV_ADD(z2, z2);
+  z3 = RV_ADD(z3, z3);
+  RV_CONJ_DFT2(&z1, &z3);
+  RV_DFT2(&z0, &z2);
+  RDFT_4_STORE(RDFT_4_OUTPUT_INDEX(0), z0);
+  RDFT_4_STORE(RDFT_4_OUTPUT_INDEX(1), z1);
+  RDFT_4_STORE(RDFT_4_OUTPUT_INDEX(2), z2);
+  RDFT_4_STORE(RDFT_4_OUTPUT_INDEX(3), z3);
+}
+
+#undef RDFT_4_LOAD_RI_0
+#undef RDFT_4_LOAD_RI
+#undef RDFT_4_STORE
+#undef RDFT_4_INPUT_INDEX
+#undef RDFT_4_OUTPUT_INDEX
